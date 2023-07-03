@@ -8,7 +8,10 @@
   <title>Links</title>
 <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=xio4fP8dHxAuJ-dRG_QxwFVRdx_LKlJzyi2cf97BK6WshaQ_oPc6YWoMu-BXFuCFko405FWzQggK0lfY5xo60AQd9mzbYrkaBisn1kCaCG4" charset="UTF-8"></script></head>
 <body>
+  <input type="text" id="search-bar" placeholder="Search...">
+  <table id="links-table">
   श्री गणेशायः नमः<br><br>
+  <table>
   <tr><td><a href="https://debakatimilsina.github.io/srinajirnikunja.git.io/" target="_blank">Sri-NajirNikunja Full(30th bar)</a><br>Content can be copied, printed and downloaded.<br></td></tr><br><br>
   <tr><td><a href="https://docs.google.com/document/d/1wz6K4dlLiVI5TvpkFfgn6K1OV_CC5X2fBA7t2qjkFzI/edit?usp=share_link" target="_blank">LawExam.Obj</a><br><br></td></tr><br><br>
   <tr><td><a href="https://docs.google.com/document/d/1y9b9xF46g50KcybqNNxGqBxCD08E_9P_HYPlIAy67ec/edit?usp=share_link" target="_blank">PragyaDoc</a><br>Source:google drive:Collection of Najir etc.<br></td></tr><br><br>
@@ -65,7 +68,31 @@
   <tr><td><a href="https://shivaprasadacharya.github.io/.git.io/" target="_blank"> </a><br><br></td></tr><br><br>
   <tr><td><a href="https://shivaprasadacharya.github.io/.git.io/" target="_blank"> </a><br><br></td></tr><br><br>
   <tr><td><a href="https://shivaprasadacharya.github.io/.git.io/" target="_blank"> </a><br><br></td></tr><br><br>
+  </table>
+  <script>
+    // Get references to the search bar and links table
+    var searchBar = document.getElementById("search-bar");
+    var linksTable = document.getElementById("links-table");
+    var tableRows = linksTable.getElementsByTagName("tr");
 
+    // Add event listener for the input event on the search bar
+    searchBar.addEventListener("input", function() {
+      // Get the search query from the input value
+      var query = searchBar.value.toLowerCase().trim();
+
+      // Loop through the table rows to find matching links
+      for (var i = 0; i < tableRows.length; i++) {
+        var linkText = tableRows[i].textContent.toLowerCase();
+
+        // Check if the link text contains the search query
+        if (linkText.includes(query)) {
+          tableRows[i].style.display = "";
+        } else {
+          tableRows[i].style.display = "none";
+        }
+      }
+    });
+  </script>
 </body>
 </html>
 <!-- added new repo 30th bar najir with paralysed source code -->
