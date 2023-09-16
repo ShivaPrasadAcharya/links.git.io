@@ -23,10 +23,19 @@
       height:5%
     }
 
-    #links-table {
-      border-collapse: collapse;
-      width: 100%;
-    }
+#links-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#links-table th:first-child,
+#links-table td:first-child {
+  position: sticky;
+  top: 0;
+  background-color: white; /* You can change the background color as needed */
+  z-index: 2; /* Ensure it's above the other rows */
+}
+
 
     #links-table td {
       padding: 10px;
@@ -37,7 +46,7 @@
 <body>
   <textarea id="search-bar" placeholder="Search..."></textarea>
   <table id="links-table">
-    <tr><td></td></tr>
+    <tr ><th></th></tr>
        <tr><td><a href="https://github.com/ShivaPrasadAcharya/links.git.io/blob/main/index.html" target="_blank">Editable Link &#9999;</a><br>Edit your link from here<br></td></tr>
        <tr><td><a href="https://github.com/ShivaPrasadAcharya?tab=repositories" target="_blank"> REPOS</a><br>Shiva's Repos &#9999;<br></td></tr>
     <tr><td><a href="https://debakatimilsina.github.io/srinajirnikunja.git.io/" target="_blank">Sri-NajirNikunja Full(30th bar)</a><br>Content can be copied, printed and downloaded.<br></td></tr>
