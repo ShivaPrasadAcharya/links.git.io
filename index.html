@@ -11,17 +11,35 @@
     }
 
     
-  #search-bar {
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 12px;
-    margin: 25px; /* Adjust this value to add more padding outside the search bar */
-    text-align: left;
-    background-color: yellow;
-    position: fixed;
-    width: 12%;
-    height: 4%;
+.search-bar-container {
+  display: flex;
+  align-items: flex-start; /* Align the elements vertically at the top */
+  margin: 25px; /* Adjust this value to add more spacing */
 }
+
+#search-bar {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  background-color: yellow;
+  width: 12%;
+  height: 4%;
+  /* Add padding as needed */
+  padding: 5px;
+  box-sizing: border-box; /* Include padding in width and height calculations */
+  float: left; /* Float the search bar to the left */
+  margin-right: 10px; /* Adjust this value to control the spacing between the search bar and text */
+}
+
+.text-content {
+  /* Add margin or padding to the text content to create space */
+  margin-top: 5px; /* Adjust this value as needed */
+  /* Clear the float to prevent text from wrapping around the search bar */
+  clear: left;
+}
+
+
+
     #links-table {
       border-collapse: collapse;
       width: 100%;
@@ -35,7 +53,11 @@
   </style>
 </head>
 <body>
+  <div class="search-bar-container">
   <textarea id="search-bar" placeholder="Search..."></textarea>
+  <div class="text-content">
+
+
   <table id="links-table">
  
        <tr><td><a href="https://github.com/ShivaPrasadAcharya/links.git.io/blob/main/index.html" target="_blank">Editable Link &#9999;</a><br>Edit your link from here<br></td></tr>
@@ -142,6 +164,9 @@
        <tr><td><a href="https://github.com/debakatimilsina/mcq.git.io/blob/main/index.html" target="_blank">mcq BarExam  &#9999;</a><br> Edit mcq Here.<br></td></tr>
         <tr><td><a href="https://github.com/ShivaPrasadAcharya?tab=repositories" target="_blank"> REPOS</a><br>Shiva's Repos &#9999;<br></td></tr>
     <tr><td><a href="https://github.com/ShivaPrasadAcharya/links.git.io/blob/main/index.html" target="_blank">Editable Link &#9999; </a><br>Edit your link from here<br></td></tr>    
+       
+  </div>
+</div>
     <script>
     // Get references to the search bar and links table
     var searchBar = document.getElementById("search-bar");
