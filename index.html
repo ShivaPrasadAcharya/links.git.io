@@ -1,217 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Links</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-
-    
-.search-bar-container {
-  display: flex;
-  align-items: flex-start; /* Align the elements vertically at the top */
-  margin: 25px; /* Adjust this value to add more spacing */
-}
-
-#search-bar {
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 12px;
-  background-color: yellow;
-  width: 12%;
-  height: 4%;
-  /* Add padding as needed */
-  padding: 5px;
-  box-sizing: border-box; /* Include padding in width and height calculations */
-  float: left; /* Float the search bar to the left */
-  margin-right: 10px; /* Adjust this value to control the spacing between the search bar and text */
-  position:fixed;
-}
-
-.text-content {
-  /* Add margin or padding to the text content to create space */
-  margin-top: 5px; /* Adjust this value as needed */
-  /* Clear the float to prevent text from wrapping around the search bar */
-  clear: left;
-}
-
-
-
-    #links-table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-
-    #links-table td {
-      padding: 10px;
-      border-bottom: 1px solid #ccc;
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+        rel="stylesheet">
+    <style>
+        body {
+            padding-top: 70px;
+        }
+        .search-bar-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #f8f9fa;
+            padding: 15px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        #search-bar {
+            background-color: #fff;
+            border: 1px solid #ced4da;
+        }
+        #links-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .section-header {
+            background-color: #e9ecef;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
-  <div class="search-bar-container">
-  <textarea id="search-bar" placeholder="Search..."></textarea>
-  <div class="text-content">
-
-
-  <table id="links-table">
- 
-       <tr><td><a href="https://github.com/ShivaPrasadAcharya/links.git.io/blob/main/index.html" target="_blank">Editable Link &#9999;</a><br>Edit your link from here<br></td></tr>
-       <tr><td><a href="https://github.com/ShivaPrasadAcharya?tab=repositories" target="_blank"> REPOS</a><br>Shiva's Repos &#9999;<br></td></tr>
-    <tr><td><a href="https://debakatimilsina.github.io/srinajirnikunja.git.io/" target="_blank">Sri-NajirNikunja Full(30th bar)</a><br>Content can be copied, printed and downloaded.<br></td></tr>
-    <tr><td><a href="https://debakatimilsina.github.io/syllablesforbarexam.git.io/" target="_blank">(31th bar syllables & mcq) <a href="https://github.com/debakatimilsina/syllablesforbarexam.git.io/blob/main/index.html" target="_blank">&#9999; </a><br> 31st bar exam syllables & sample mcq's <br></a><br><br></td></tr>
-      <tr><td><a href="https://docs.google.com/document/d/1wz6K4dlLiVI5TvpkFfgn6K1OV_CC5X2fBA7t2qjkFzI/edit?usp=share_link" target="_blank">LawExam.Obj</a><br><br></td></tr>
-      <tr><td><a href="https://docs.google.com/document/d/1y9b9xF46g50KcybqNNxGqBxCD08E_9P_HYPlIAy67ec/edit?usp=share_link" target="_blank">PragyaDoc</a><br>Source:google drive:Collection of Najir etc.<br></td></tr>
-      <tr><td><a href="https://drive.google.com/file/d/10h63tVKyoclUvv3Hp5SbS2l2TruUTm-3/view?usp=share_link" target="_blank">ColorPhoto.jpg</a><br>Source:google drive<br></td></tr>
-      <tr><td><a href="https://drive.google.com/file/d/1kNzLM-frttwAHsScgtJrWZiSAkUXYTF5/view?usp=share_link" target="_blank">BarCouncilSyllables 31th</a><br>Source: google drive:pdf file. syllables in nepali only.<br></td></tr>
-      <tr><td><a href="https://drive.google.com/file/d/1kXqgJVf3CFxHswP7d1fzbfeUbJae2DZV/view?usp=share_link" target="_blank">DebakaColor.jpg</a><br>Source: google drive<br></td></tr>
-      <tr><td><a href="https://drive.google.com/file/d/1NZQCIsbWOGT-iX1aJUBslUb4tv8PqwKE/view?usp=share_link" target="_blank">Lailu</a><br><br></td></tr>
-      <tr><td><a href="https://drive.google.com/file/d/1okZz_E0RjfRAqJ-_3mwkGXYzsJIhw8E2/view?usp=share_link" target="_blank">PragyaPdf</a><br><br></td></tr>
-      <tr><td><a href="https://drive.google.com/file/d/1PKCakwjNNF4PJUwKH6GIIHHvUXAAaH8p/view?usp=share_link" target="_blank">B&WPhoto.jpg</a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/astrology.git.io/" target="_blank">ASTROLOGY</a><a href="https://github.com/ShivaPrasadAcharya/astrology.git.io/blob/main/index.html" target="_blank"> &#9999; </a><br>Tipan<br></td></tr>
-    <tr><td><a href="https://shivaprasadacharya.github.io/kundalinichart.git.io/" target="_blank">KUNDALINI CHART</a><a href="https://github.com/ShivaPrasadAcharya/kundalinichart.git.io/blob/main/index.html" target="_blank"> &#9999; </a><br>kundali, svg, birth chart, astrology, tipan, china<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/AswerTipsfor30thBarQuestion.git.io/" target="_blank">BAR QA</a><a href="https://github.com/ShivaPrasadAcharya/AswerTipsfor30thBarQuestion.git.io/blob/main/index.html" target="_blank"> &#9999; </a><br>non-functional<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/BarSyllables.git.io/" target="_blank">BarSyllables (31th)</a><a href="https://github.com/ShivaPrasadAcharya/BarSyllables.git.io/blob/main/index.html" target="_blank"> &#9999; </a><br>Nepali & English<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/contactlistinservicetraining.git.io/" target="_blank">Contact List</a><a href="https://github.com/ShivaPrasadAcharya/contactlistinservicetraining.git.io/blob/main/index.html" target="_blank"> &#9999; </a><br>Nyaya Sewa Talim Kendra<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/casestatus.git.io/" target="_blank">CASE STATUS</a><a href="https://github.com/ShivaPrasadAcharya/casestatus.git.io/blob/main/index.html" target="_blank"> &#9999; </a><br>High Court Collection<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/collapsible-part-constitution.git.io/" target="_blank">CONSTITUTION WITH COLLAPSIBLE PART</a><a href="https://github.com/ShivaPrasadAcharya/collapsible-part-constitution.git.io/blob/main/index.html" target="_blank"> &#9999; </a><br>Nepali Version<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/constitution.git.io/" target="_blank">CONSTITUTION</a><a href="https://github.com/ShivaPrasadAcharya/constitution.git.io/blob/main/index.html" target="_blank"> &#9999; </a> <br>Complete (in Nepal.) with few footnotes.<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/constitutionarticleonly.git.io/" target="_blank">CONSTITUTION ARTICLES ONLY</a><a href="https://github.com/ShivaPrasadAcharya/constitutionarticleonly.git.io/blob/main/index.html" target="_blank"> &#9999; </a><br>In Nepali Only<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/courtorders.git.io/" target="_blank">COURT ORDERS</a> Court Orders links and samples -categorywise <br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/familytreelaxmisunuwarcase.git.io/" target="_blank">FAMILY TREE</a><br>non functional<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/federalprovinceelection2079.git.io/" target="_blank">ELECTION 2079</a><br>Kanchanrup Nagarpalika<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/judicialreview.git.io/" target="_blank">JUDICIAL REVIEW</a><br>Task not completed.<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/lawjournal.git.io/" target="_blank">LAW JOURNAL</a><br>List Only<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/legaldraft.git.io/" target="_blank">LEGAL DRAFTS</a><br>Few Samples<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/loksewa.git.io/" target="_blank">LOK SEWA</a><br>Non functional link.<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/mantra.git.io/" target="_blank"> Mantra & sloka <a href="https://github.com/ShivaPrasadAcharya/mantra.git.io/blob/main/index.html" target="_blank">&#9999;</a></a><br>Collection of Vedic Mantras and Stotras <br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/mulukicivilcode.git.io/" target="_blank">MULUKI CIVIL CODE</a><br>Full Content<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/neopragya.git.io/" target="_blank">neopragya</a><br>Work on Process.<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/neopragyatable.git.io/" target="_blank">neopragyatable</a><br>Collection of table. Links are used in neopragya.<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/pragyakosh.git.io/" target="_blank">PRAGYAKOSH</a><br>Note: It has in text footnoting style.<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/radhakrishna.git.io/" target="_blank">NAGIRNIKUNJA</a><br>Note: Non-functional link<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/radhakrishna.github.io/" target="_blank">RADHAKRSNA</a><br>3oth najirnikunja distribution<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/rayakitab.git.io/" target="_blank">RAYAKITAB</a><br>Rajbiraj High Court<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/sample1.git.io/" target="_blank">ColumnOneLink:Sample1</a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/sample2.git.io/" target="_blank">ColumnTwoLink:Sample2</a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/supremecourtorders.git.io/" target="_blank">SC Orders</a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/srinajirnikunja30thbar.git.io/" target="_blank">srinajirnikunja30th</a><br>Note: Content cannot be cut, copied, print or downloaded. for this refer to debaka's site.<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/tantra.git.io/" target="_blank">TANTRA</a><br>Note: आचार्यको पाठ्यक्रम (दुवै वर्षको)<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/tantranotes.git.io/" target="_blank">TANTRANOTES</a><br>Note: chat gpt बाट बनाएकोले त्यति राम्रो छैन। अझ परिस्कृत गर्न जरूरी छ।<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/undersecretaryexamnotes.git.io/" target="_blank">EXAM NOTES OF US</a><br>Note:It was  bypassed by another style.There is  No content. <br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/upasachibsyllables.git.io/" target="_blank">US SYLLABLES</a><br>first & second paper of major services.<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/websiteofshiva/" target="_blank">WEBSITE OF SHIVA<a href="https://github.com/ShivaPrasadAcharya/websiteofshiva/blob/main/index.html" target="_blank">&#9999;</a></a><br>GitHub, Quora & Research Gate<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/sloka.git.io/" target="_blank">Sloka</a><br>Ravana Tandav Storam<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/vscodetricks.git.io/" target="_blank">VSCode Tricks</a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/buttonssample.git.io/" target="_blank">buttons</a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/najir.git.io/" target="_blank">Najir</a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/problemsnsolutions.git.io/" target="_blank">PROSOL</a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/najirform.git.io/" target="_blank">NajirForm</a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/quotesform.git.io/" target="_blank">QuotesForm</a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/phrasesnwords.git.io/" target="_blank">phraresNwordsForm </a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/opinionnnews.git.io/" target="_blank">opinionNnews </a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/interviewtips.git.io/" target="_blank">Interview Tips </a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/inbaskettips.git.io/" target="_blank">Inbasket Tips </a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/webpagewithforms.git.io/" target="_blank">Forms </a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/samayojan.git.io/" target="_blank">Samayojan Faishala</a><br>का.व्य.को बहस मात्र<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/likhitdrafts.git.io/" target="_blank"> बैना कागज</a><br>contains input fields<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/articles.git.io/" target="_blank"> Articles</a><br>For Making Notes Using Input Value.<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/bpsg.git.io/" target="_blank"> BPSG 454 <a href="https://github.com/ShivaPrasadAcharya/bpsg.git.io/blob/main/index.html" target="_blank">&#9999;</a></a><br> Syllables and Notes of PSM II<br></td></tr>
-    <tr><td><a href="https://shivaprasadacharya.github.io/arrowchart.git.io/" target="_blank">Arrow Chart</a><a href="https://github.com/ShivaPrasadAcharya/arrowchart.git.io/blob/main/index.html" target="_blank">&#9999;</a>
-    <br>A  hierarchical structures using arrows.</td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/randomname.git.io/" target="_blank">Random Name </a><br>BPSG-454: Random Name Generator<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/stagesofconflict.git.io/" target="_blank">Stages of Conflict</a><br>Diagram<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/endnotesforarticles.git.io/" target="_blank">Content & Endnotegenerator </a><br>The output1 should be copied & pasted in this webpage source code whereas other output should be copied and pasted in articles webpage.<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/labfordynamicwebpage.git.io/" target="_blank">Lab </a><br>This is experimental file for input and outputs of dynamic webpage<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/contactlistrajhc.git.io/" target="_blank">Contact List of Raj HC </a><br>Human Resource of RAjbiraj High Court<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/draftingrecord.git.io/" target="_blank">Drafting Record </a><br>Drafting Status of Supreme Court Judgement of Shiva Prasad Acharya<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/lab0.git.io/" target="_blank">lab0 </a><br>small experimental html with autopopulation of input field <br> but without functional buttons<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/lab2.git.io/" target="_blank"> Lab2</a><br>Editable Webpages (editing source code through the edition of webpage)<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/lab3.git.io/" target="_blank"> Lab3</a><br>For Input and output in same webpage having endnotes of main text.<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/lab4.git.io/" target="_blank">Lab4 </a><br>For input and output having footnotes in main text in separate container<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/lab5.git.io/" target="_blank"> lab 5</a><br> Main text with footnotes beneath it which is displayed on click of hyperlinked  <br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/lab6.git.io/" target="_blank"> lab6</a><br> Main text with footnote beneath the text with consecutive numbering system (for single array) <br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/landmarkorders.git.io/" target="_blank">landmark orders </a><br> collection of landmark orders and decisions<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/politicsandadministration.git.io/" target="_blank">Politics & Administration </a><br>Contains articles, keywords, Quotes related to politics and administration <br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/constitutionalbenchorders.git.io/" target="_blank">CB Orders </a><br>Constituional Bench Order Collection<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/bpsg7.git.io/" target="_blank">BPSG 7th sem </a><br>Article writing guideline,contact list, syllables<br></td></tr>
-     
-      <tr><td><a href="https://github.com/ShivaPrasadAcharya?tab=repositories" target="_blank"> REPOS</a><br>Shiva's Repos<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/largelab.git.io/" target="_blank">LARGE LAB </a><br>large lab with 64 inputs and GIF<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/srimadbhagawadgitalab.git.io/" target="_blank">SrimadBhagawadGita LAB </a><br> lab for Experimenting Gita Verses<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/constitutionalbenchdecisions.git.io/" target="_blank"> CB Decisions </a><br>cbdecisions of supreme court<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/.git.io/" target="_blank"> </a><br><br></td></tr>
-    <tr><td><a href="https://shivaprasadacharya.github.io/links.git.io/" target="_blank">Switch to Master LINK</a><br>Go to Parent Page<br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/dataarray-replace.git.io/" target="_blank"> Replace Data Array <a href="https://github.com/ShivaPrasadAcharya/dataarray-replace.git.io/blob/main/index.html" target="_blank">&#9999; </a><br> Generating  and Replace Data Array.  Replace will not expand data array<br> </a><br><br></td></tr>
-     
-      <tr><td><a href="https://shivaprasadacharya.github.io/dataarray-insert.git.io/" target="_blank">Insert Data Array <a href="https://github.com/ShivaPrasadAcharya/dataarray-insert.git.io/blob/main/index.html" target="_blank"> &#9999;</a><br><br> </a><br>Generating and Inserting Data array. Insert will expand data array.<br></td></tr>
-
-    <tr><td><a href="https://shivaprasadacharya.github.io/judicialpronouncement.git.io/" target="_blank"> Judicial Pronouncement Judicial Pronouncement of (especially of) SC of Nepal <br></td></tr>
-  <tr><td><a href="https://shivaprasadacharya.github.io/calljudiciary.git.io/" target="_blank"> Call Judiciary <a href="https://github.com/ShivaPrasadAcharya/calljudiciary.git.io/blob/main/index.html" target="_blank">&#9999;</a></a><br>Contact List of Gazetted officer of Judiciary (2081) <br></td></tr>
-<tr><td><a href="https://shivaprasadacharya.github.io/nasc.git.io/" target="_blank"> Staff College <a href="https://github.com/ShivaPrasadAcharya/nasc.git.io/blob/main/index.html" target="_blank">&#9999;</a></a><br>Contact List of OPMD participants-Upaschib (2081) <br></td></tr>
-    <tr><td><a href="https://shivaprasadacharya.github.io/sankalpa.git.io/" target="_blank"> Sankalpa <a href="https://github.com/ShivaPrasadAcharya/sankalpa.git.io/blob/main/index.html" target="_blank">&#9999;</a></a><br>Sankalpa for outstanding performance in DJ exam <br></td></tr>
-  <tr><td><a href="https://shivaprasadacharya.github.io/proffessionalwords.git.io/" target="_blank"> Prof-words <a href="https://github.com/ShivaPrasadAcharya/proffessionalwords.git.io/blob/main/index.html" target="_blank">Prof-words &#9999;</a><br>administrative proffessional words<br></td></tr> 
-
-      <tr><td><a href="https://shivaprasadacharya.github.io/invitationtoanjansir.git.io/" target="_blank">Invitation to Anjan Sir</a><a href="https://github.com/ShivaPrasadAcharya/invitationtoanjansir.git.io/blob/main/index.html" target="_blank">Invitation to Anjan Sir &#9999;</a><br>Invitation to a special event<br></td></tr>
-
-  
-<tr><td><a href="https://debakatimilsina.github.io/modelmcqfor32barexam.git.io/" target="_blank">mcq for 32 bar exam</a><a href="https://github.com/debakatimilsina/modelmcqfor32barexam.git.io/edit/main/index.html" target="_blank">mcq for 32 bar exam &#9999;</a><br>Advocate licence exam-32nd, Najirnikunja<br></td></tr><br>
-    <tr><td><a href="https://debakatimilsina.github.io/suvakamana.git.io/" target="_blank">Innovative legal service</a>
-        <a href="https://github.com/debakatimilsina/suvakamana.git.io/blob/main/index.html" target="_blank">&#9999;</a>   <br>Festive Greetings and Wishes, Dashain, Suvakamana, <br></td></tr> <br>
-
-     <tr><td><a href="https://shivaprasadacharya.github.io/cbcaserecord.git.io/" target="_blank"> CB Case Records <a href="https://github.com/ShivaPrasadAcharya/cbcaserecord.git.io/blob/main/index.html" target="_blank"> &#9999;</a> </a><br>This link shows the case records of constitutional bench. (cb)<br></td></tr>
-
-      <tr><td><a href="https://shivaprasadacharya.github.io/nyayikawajarticle.git.io/" target="_blank"> Nyayik Awaj Article  <a href="https://github.com/ShivaPrasadAcharya/nyayikawajarticle.git.io/blob/main/index.html" target="_blank"> &#9999;</a> </a><br>These are the materials collected for journal (न्यायिक आवाज, २०८१)<br></td></tr>
-    
-      <tr><td><a href="https://shivaprasadacharya.github.io/.git.io/" target="_blank"> </a><br><br></td></tr>
-      <tr><td><a href="https://shivaprasadacharya.github.io/.git.io/" target="_blank"> </a><br><br></td></tr>
-    <tr><td><a href="https://shivaprasadacharya.github.io/links.git.io/" target="_blank">Switch to Master LINK</a><br>Go to Parent Page<br></td></tr>
-<tr><td>EDIT PAGE DIRECTLY FROM HERE</td></tr>
-           <tr><td><a href="https://shivaprasadacharya.github.io/links.git.io/" target="_blank">Switch to Master LINK &#9999;</a><br>Go to Parent Page<br></td></tr>
-
-       <tr><td><a href="https://github.com/ShivaPrasadAcharya/bpsg7.git.io/blob/main/index.html" target="_blank"> BPSG7 &#9999;</a><br> Edit bpsg7 here.<br></td></tr>
-       <tr><td><a href="https://github.com/ShivaPrasadAcharya/constitutionalbenchorders.git.io/blob/main/index.html" target="_blank"> CB Orders &#9999;</a><br> Edit constitutional Bench order here.<br></td></tr>
-       <tr><td><a href="https://github.com/ShivaPrasadAcharya/politicsandadministration.git.io/blob/main/index.html" target="_blank"> Politics and Administration &#9999;</a><br> Edit Politics and Administration Here.<br></td></tr>
-       <tr><td><a href="https://github.com/debakatimilsina/syllablesforbarexam.git.io" target="_blank"> 31 BarExam Syllables &#9999;</a><br> Edit Syllables Here.<br></td></tr>
-       <tr><td><a href="https://github.com/debakatimilsina/mcq.git.io/blob/main/index.html" target="_blank">mcq BarExam  &#9999;</a><br> Edit mcq Here.<br></td></tr>
-        <tr><td><a href="https://github.com/ShivaPrasadAcharya?tab=repositories" target="_blank"> REPOS</a><br>Shiva's Repos &#9999;<br></td></tr>
-    <tr><td><a href="https://github.com/ShivaPrasadAcharya/links.git.io/blob/main/index.html" target="_blank">Editable Link &#9999; </a><br>Edit your link from here<br></td></tr> 
-
-    
- 
-    <tr><td><a href="https://github.com/ShivaPrasadAcharya/.git.io/blob/main/index.html" target="_blank">... &#9999; </a><br>...<br></td></tr>    
-    <tr><td><a href="https://github.com/ShivaPrasadAcharya/.git.io/blob/main/index.html" target="_blank">... &#9999; </a><br>...<br></td></tr>    
-       
-  </div>
-</div>
+    <div class="search-bar-container">
+        <div class="container">
+            <input type="text"
+                id="search-bar"
+                class="form-control"
+                placeholder="Search links...">
+        </div>
+    </div>
+    <div class="container mt-3">
+        <table id="links-table"
+            class="table">
+            <tbody>
+                <!-- Links will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
-    // Get references to the search bar and links table
-    var searchBar = document.getElementById("search-bar");
-    var linksTable = document.getElementById("links-table");
-    var tableRows = linksTable.getElementsByTagName("tr");
-
-    // Add event listener for the input event on the search bar
-    searchBar.addEventListener("input", function() {
-      // Get the search query from the input value
-      var query = searchBar.value.toLowerCase().trim();
-
-      // Loop through the table rows to find matching links
-      for (var i = 0; i < tableRows.length; i++) {
-        var linkText = tableRows[i].textContent.toLowerCase();
-
-        // Check if the link text contains the search query
-        if (linkText.includes(query)) {
-          tableRows[i].style.display = "";
-        } else {
-          tableRows[i].style.display = "none";
+        const links = [
+            {
+                category: "Shiva's GitHub Links", links: [
+                    { url: "https://github.com/ShivaPrasadAcharya/links.git.io/blob/main/index.html", title: "EDITABLE LINK", editUrl: "https://github.com/ShivaPrasadAcharya/links.git.io/blob/main/index.html", description: "Edit your link from here" },
+                    { url: "https://github.com/ShivaPrasadAcharya?tab=repositories", title: "REPOS", editUrl: "https://github.com/ShivaPrasadAcharya?tab=repositories", description: "Shiva's Repos" },
+                    { url: "https://shivaprasadacharya.github.io/astrology.git.io/", title: "ASTROLOGY", editUrl: "https://github.com/ShivaPrasadAcharya/astrology.git.io/blob/main/index.html", description: "Tipan" },
+                    { url: "https://shivaprasadacharya.github.io/kundalinichart.git.io/", title: "KUNDALINI CHART", editUrl: "https://github.com/ShivaPrasadAcharya/kundalinichart.git.io/blob/main/index.html", description: "kundali, svg, birth chart, astrology, tipan, china" },
+                    { url: "https://shivaprasadacharya.github.io/AswerTipsfor30thBarQuestion.git.io/", title: "BAR QA", editUrl: "https://github.com/ShivaPrasadAcharya/AswerTipsfor30thBarQuestion.git.io/blob/main/index.html", description: "non-functional" },
+                    { url: "https://shivaprasadacharya.github.io/BarSyllables.git.io/", title: "BAR SYLLABLES (31TH)", editUrl: "https://github.com/ShivaPrasadAcharya/BarSyllables.git.io/blob/main/index.html", description: "Nepali & English" },
+                    { url: "https://shivaprasadacharya.github.io/contactlistinservicetraining.git.io/", title: "CONTACT LIST", editUrl: "https://github.com/ShivaPrasadAcharya/contactlistinservicetraining.git.io/blob/main/index.html", description: "Nyaya Sewa Talim Kendra" },
+                    { url: "https://shivaprasadacharya.github.io/casestatus.git.io/", title: "CASE STATUS", editUrl: "https://github.com/ShivaPrasadAcharya/casestatus.git.io/blob/main/index.html", description: "High Court Collection" },
+                    { url: "https://shivaprasadacharya.github.io/collapsible-part-constitution.git.io/", title: "CONSTITUTION WITH COLLAPSIBLE PART", editUrl: "https://github.com/ShivaPrasadAcharya/collapsible-part-constitution.git.io/blob/main/index.html", description: "Nepali Version" },
+                    { url: "https://shivaprasadacharya.github.io/constitution.git.io/", title: "CONSTITUTION", editUrl: "https://github.com/ShivaPrasadAcharya/constitution.git.io/blob/main/index.html", description: "Complete (in Nepal.) with few footnotes" },
+                    { url: "https://shivaprasadacharya.github.io/constitutionarticleonly.git.io/", title: "CONSTITUTION ARTICLES ONLY", editUrl: "https://github.com/ShivaPrasadAcharya/constitutionarticleonly.git.io/blob/main/index.html", description: "In Nepali Only" },
+                    { url: "https://shivaprasadacharya.github.io/courtorders.git.io/", title: "COURT ORDERS", editUrl: "https://github.com/ShivaPrasadAcharya/courtorders.git.io/blob/main/index.html", description: "Court Orders links and samples -categorywise" },
+                    { url: "https://shivaprasadacharya.github.io/familytreelaxmisunuwarcase.git.io/", title: "FAMILY TREE", editUrl: "https://github.com/ShivaPrasadAcharya/familytreelaxmisunuwarcase.git.io/blob/main/index.html", description: "non functional" },
+                    { url: "https://shivaprasadacharya.github.io/federalprovinceelection2079.git.io/", title: "ELECTION 2079", editUrl: "https://github.com/ShivaPrasadAcharya/federalprovinceelection2079.git.io/blob/main/index.html", description: "Kanchanrup Nagarpalika" },
+                    { url: "https://shivaprasadacharya.github.io/judicialreview.git.io/", title: "JUDICIAL REVIEW", editUrl: "https://github.com/ShivaPrasadAcharya/judicialreview.git.io/blob/main/index.html", description: "Task not completed" },
+                    { url: "https://shivaprasadacharya.github.io/lawjournal.git.io/", title: "LAW JOURNAL", editUrl: "https://github.com/ShivaPrasadAcharya/lawjournal.git.io/blob/main/index.html", description: "List Only" },
+                    { url: "https://shivaprasadacharya.github.io/legaldraft.git.io/", title: "LEGAL DRAFTS", editUrl: "https://github.com/ShivaPrasadAcharya/legaldraft.git.io/blob/main/index.html", description: "Few Samples" },
+                    { url: "https://shivaprasadacharya.github.io/loksewa.git.io/", title: "LOK SEWA", editUrl: "https://github.com/ShivaPrasadAcharya/loksewa.git.io/blob/main/index.html", description: "Non functional link" },
+                    { url: "https://shivaprasadacharya.github.io/mantra.git.io/", title: "MANTRA & SLOKA", editUrl: "https://github.com/ShivaPrasadAcharya/mantra.git.io/blob/main/index.html", description: "Collection of Vedic Mantras and Stotras" },
+                    { url: "https://shivaprasadacharya.github.io/mulukicivilcode.git.io/", title: "MULUKI CIVIL CODE", editUrl: "https://github.com/ShivaPrasadAcharya/mulukicivilcode.git.io/blob/main/index.html", description: "Full Content" },
+                    { url: "https://shivaprasadacharya.github.io/neopragya.git.io/", title: "NEOPRAGYA", editUrl: "https://github.com/ShivaPrasadAcharya/neopragya.git.io/blob/main/index.html", description: "Work on Process" },
+                    { url: "https://shivaprasadacharya.github.io/neopragyatable.git.io/", title: "NEOPRAGYATABLE", editUrl: "https://github.com/ShivaPrasadAcharya/neopragyatable.git.io/blob/main/index.html", description: "Collection of table. Links are used in neopragya" },
+                    { url: "https://shivaprasadacharya.github.io/pragyakosh.git.io/", title: "PRAGYAKOSH", editUrl: "https://github.com/ShivaPrasadAcharya/pragyakosh.git.io/blob/main/index.html", description: "Note: It has in text footnoting style" },
+                    { url: "https://shivaprasadacharya.github.io/radhakrishna.git.io/", title: "NAGIRNIKUNJA", editUrl: "https://github.com/ShivaPrasadAcharya/radhakrishna.git.io/blob/main/index.html", description: "Note: Non-functional link" },
+                    { url: "https://shivaprasadacharya.github.io/radhakrishna.github.io/", title: "RADHAKRSNA", editUrl: "https://github.com/ShivaPrasadAcharya/radhakrishna.github.io/blob/main/index.html", description: "3oth najirnikunja distribution" },
+                    { url: "https://shivaprasadacharya.github.io/rayakitab.git.io/", title: "RAYAKITAB", editUrl: "https://github.com/ShivaPrasadAcharya/rayakitab.git.io/blob/main/index.html", description: "Rajbiraj High Court" },
+                    { url: "https://shivaprasadacharya.github.io/sample1.git.io/", title: "COLUMNONELINK:SAMPLE1", editUrl: "https://github.com/ShivaPrasadAcharya/sample1.git.io/blob/main/index.html", description: "" },
+                    { url: "https://shivaprasadacharya.github.io/constitutionalbenchdecisions.git.io/", title: "CB DECISIONS", editUrl: "https://github.com/ShivaPrasadAcharya/constitutionalbenchdecisions.git.io/blob/main/index.html", description: "cbdecisions of supreme court" },
+                    { url: "https://shivaprasadacharya.github.io/sample2.git.io/", title: "COLUMNTWOLINK:SAMPLE2", editUrl: "https://github.com/ShivaPrasadAcharya/sample2.git.io/blob/main/index.html", description: "" },
+                    { url: "https://shivaprasadacharya.github.io/supremecourtorders.git.io/", title: "SC ORDERS", editUrl: "https://github.com/ShivaPrasadAcharya/supremecourtorders.git.io/blob/main/index.html", description: "" },
+                    { url: "https://shivaprasadacharya.github.io/srinajirnikunja30thbar.git.io/", title: "SRINAJIRNIKUNJA30TH", editUrl: "https://github.com/ShivaPrasadAcharya/srinajirnikunja30thbar.git.io/blob/main/index.html", description: "Note: Content cannot be cut, copied, print or downloaded. for this refer to debaka's site." },
+                    { url: "https://shivaprasadacharya.github.io/tantra.git.io/", title: "TANTRA", editUrl: "https://github.com/ShivaPrasadAcharya/tantra.git.io/blob/main/index.html", description: "Note: आचार्यको पाठ्यक्रम (दुवै वर्षको)" },
+                    { url: "https://shivaprasadacharya.github.io/tantranotes.git.io/", title: "TANTRANOTES", editUrl: "https://github.com/ShivaPrasadAcharya/tantranotes.git.io/blob/main/index.html", description: "Note: chat gpt बाट बनाएकोले त्यति राम्रो छैन। अझ परिस्कृत गर्न जरूरी छ।" },
+                    { url: "https://shivaprasadacharya.github.io/undersecretaryexamnotes.git.io/", title: "EXAM NOTES OF US", editUrl: "https://github.com/ShivaPrasadAcharya/undersecretaryexamnotes.git.io/blob/main/index.html", description: "Note:It was bypassed by another style.There is No content." },
+                    { url: "https://shivaprasadacharya.github.io/upasachibsyllables.git.io/", title: "US SYLLABLES", editUrl: "https://github.com/ShivaPrasadAcharya/upasachibsyllables.git.io/blob/main/index.html", description: "first & second paper of major services." },
+                    { url: "https://shivaprasadacharya.github.io/websiteofshiva/", title: "WEBSITE OF SHIVA", editUrl: "https://github.com/ShivaPrasadAcharya/websiteofshiva/blob/main/index.html", description: "GitHub, Quora & Research Gate" },
+                    { url: "https://shivaprasadacharya.github.io/sloka.git.io/", title: "SLOKA", editUrl: "https://github.com/ShivaPrasadAcharya/sloka.git.io/blob/main/index.html", description: "Ravana Tandav Storam" },
+                    { url: "https://shivaprasadacharya.github.io/vscodetricks.git.io/", title: "VSCODE TRICKS", editUrl: "https://github.com/ShivaPrasadAcharya/vscodetricks.git.io/blob/main/index.html", description: "" },
+                    { url: "https://shivaprasadacharya.github.io/buttonssample.git.io/", title: "BUTTONS", editUrl: "https://github.com/ShivaPrasadAcharya/buttonssample.git.io/blob/main/index.html", description: "" },
+                    { url: "https://shivaprasadacharya.github.io/najir.git.io/", title: "NAJIR", editUrl: "https://github.com/ShivaPrasadAcharya/najir.git.io/blob/main/index.html", description: "" },
+                    { url: "https://shivaprasadacharya.github.io/problemsnsolutions.git.io/", title: "PROSOL", editUrl: "https://github.com/ShivaPrasadAcharya/problemsnsolutions.git.io/blob/main/index.html", description: "" },
+                    { url: "https://shivaprasadacharya.github.io/najirform.git.io/", title: "NAJIRFORM", editUrl: "https://github.com/ShivaPrasadAcharya/najirform.git.io/blob/main/index.html", description: "" },
+                    { url: "https://shivaprasadacharya.github.io/quotesform.git.io/", title: "QUOTESFORM", editUrl: "https://github.com/ShivaPrasadAcharya/quotesform.git.io/blob/main/index.html", description: "" },
+                    { url: "https://shivaprasadacharya.github.io/phrasesnwords.git.io/", title: "PHRASESNWORDSFORM", editUrl: "https://github.com/ShivaPrasadAcharya/phrasesnwords.git.io/blob/main/index.html", description: "" },
+                    { url: "https://shivaprasadacharya.github.io/opinionnnews.git.io/", title: "OPINIONNEWS", editUrl: "https://github.com/ShivaPrasadAcharya/opinionnnews.git.io/blob/main/index.html", description: "" },
+                    { url: "https://shivaprasadacharya.github.io/interviewtips.git.io/", title: "INTERVIEW TIPS", editUrl: "https://github.com/ShivaPrasadAcharya/interviewtips.git.io/blob/main/index.html", description: "" },
+                    { url: "https://shivaprasadacharya.github.io/inbaskettips.git.io/", title: "INBASKET TIPS", editUrl: "https://github.com/ShivaPrasadAcharya/inbaskettips.git.io/blob/main/index.html", description: "" },
+                    { url: "https://shivaprasadacharya.github.io/webpagewithforms.git.io/", title: "FORMS", editUrl: "https://github.com/ShivaPrasadAcharya/webpagewithforms.git.io/blob/main/index.html", description: "" },
+                    { url: "https://shivaprasadacharya.github.io/samayojan.git.io/", title: "SAMAYOJAN FAISHALA", editUrl: "https://github.com/ShivaPrasadAcharya/samayojan.git.io/blob/main/index.html", description: "का.व्य.को बहस मात्र" },
+                    { url: "https://shivaprasadacharya.github.io/likhitdrafts.git.io/", title: "बैना कागज", editUrl: "https://github.com/ShivaPrasadAcharya/likhitdrafts.git.io/blob/main/index.html", description: "contains input fields" },
+                    { url: "https://shivaprasadacharya.github.io/articles.git.io/", title: "ARTICLES", editUrl: "https://github.com/ShivaPrasadAcharya/articles.git.io/blob/main/index.html", description: "For Making Notes Using Input Value." },
+                    { url: "https://shivaprasadacharya.github.io/bpsg.git.io/", title: "BPSG 454", editUrl: "https://github.com/ShivaPrasadAcharya/bpsg.git.io/blob/main/index.html", description: "Syllables and Notes of PSM II" },
+                    { url: "https://shivaprasadacharya.github.io/arrowchart.git.io/", title: "ARROW CHART", editUrl: "https://github.com/ShivaPrasadAcharya/arrowchart.git.io/blob/main/index.html", description: "A hierarchical structures using arrows." },
+                    { url: "https://shivaprasadacharya.github.io/randomname.git.io/", title: "RANDOM NAME", editUrl: "https://github.com/ShivaPrasadAcharya/randomname.git.io/blob/main/index.html", description: "BPSG-454: Random Name Generator" },
+                    { url: "https://shivaprasadacharya.github.io/stagesofconflict.git.io/", title: "STAGES OF CONFLICT", editUrl: "https://github.com/ShivaPrasadAcharya/stagesofconflict.git.io/blob/main/index.html", description: "Diagram" },
+                    { url: "https://shivaprasadacharya.github.io/endnotesforarticles.git.io/", title: "CONTENT & ENDNOTEGENERATOR", editUrl: "https://github.com/ShivaPrasadAcharya/endnotesforarticles.git.io/blob/main/index.html", description: "The output1 should be copied & pasted in this webpage source code whereas other output should be copied and pasted in articles webpage." },
+                    { url: "https://shivaprasadacharya.github.io/labfordynamicwebpage.git.io/", title: "LAB", editUrl: "https://github.com/ShivaPrasadAcharya/labfordynamicwebpage.git.io/blob/main/index.html", description: "This is experimental file for input and outputs of dynamic webpage" },
+                    { url: "https://shivaprasadacharya.github.io/contactlistrajhc.git.io/", title: "CONTACT LIST OF RAJ HC", editUrl: "https://github.com/ShivaPrasadAcharya/contactlistrajhc.git.io/blob/main/index.html", description: "Human Resource of RAjbiraj High Court" },
+                    { url: "https://shivaprasadacharya.github.io/draftingrecord.git.io/", title: "DRAFTING RECORD", editUrl: "https://github.com/ShivaPrasadAcharya/draftingrecord.git.io/blob/main/index.html", description: "Drafting Status of Supreme Court Judgement of Shiva Prasad Acharya" },
+                    { url: "https://shivaprasadacharya.github.io/lab0.git.io/", title: "LAB0", editUrl: "https://github.com/ShivaPrasadAcharya/lab0.git.io/blob/main/index.html", description: "small experimental html with autopopulation of input field but without functional buttons" },
+                    { url: "https://shivaprasadacharya.github.io/lab2.git.io/", title: "LAB2", editUrl: "https://github.com/ShivaPrasadAcharya/lab2.git.io/blob/main/index.html", description: "Editable Webpages (editing source code through the edition of webpage)" },
+                    { url: "https://shivaprasadacharya.github.io/lab3.git.io/", title: "LAB3", editUrl: "https://github.com/ShivaPrasadAcharya/lab3.git.io/blob/main/index.html", description: "For Input and output in same webpage having endnotes of main text." },
+                    { url: "https://shivaprasadacharya.github.io/lab4.git.io/", title: "LAB4", editUrl: "https://github.com/ShivaPrasadAcharya/lab4.git.io/blob/main/index.html", description: "For input and output having footnotes in main text in separate container" },
+                    { url: "https://shivaprasadacharya.github.io/lab5.git.io/", title: "LAB 5", editUrl: "https://github.com/ShivaPrasadAcharya/lab5.git.io/blob/main/index.html", description: "Main text with footnotes beneath it which is displayed on click of hyperlinked" },
+                    { url: "https://shivaprasadacharya.github.io/lab6.git.io/", title: "LAB6", editUrl: "https://github.com/ShivaPrasadAcharya/lab6.git.io/blob/main/index.html", description: "Main text with footnote beneath the text with consecutive numbering system (for single array)" },
+                    { url: "https://shivaprasadacharya.github.io/landmarkorders.git.io/", title: "LANDMARK ORDERS", editUrl: "https://github.com/ShivaPrasadAcharya/landmarkorders.git.io/blob/main/index.html", description: "collection of landmark orders and decisions" },
+                    { url: "https://shivaprasadacharya.github.io/politicsandadministration.git.io/", title: "POLITICS & ADMINISTRATION", editUrl: "https://github.com/ShivaPrasadAcharya/politicsandadministration.git.io/blob/main/index.html", description: "Contains articles, keywords, Quotes related to politics and administration" },
+                    { url: "https://shivaprasadacharya.github.io/constitutionalbenchorders.git.io/", title: "CB ORDERS", editUrl: "https://github.com/ShivaPrasadAcharya/constitutionalbenchorders.git.io/blob/main/index.html", description: "Constituional Bench Order Collection" },
+                    { url: "https://shivaprasadacharya.github.io/bpsg7.git.io/", title: "BPSG 7TH SEM", editUrl: "https://github.com/ShivaPrasadAcharya/bpsg7.git.io/blob/main/index.html", description: "Article writing guideline,contact list, syllables" },
+                    { url: "https://shivaprasadacharya.github.io/largelab.git.io/", title: "LARGE LAB", editUrl: "https://github.com/ShivaPrasadAcharya/largelab.git.io/blob/main/index.html", description: "large lab with 64 inputs and GIF" },
+                    { url: "https://shivaprasadacharya.github.io/srimadbhagawadgitalab.git.io/", title: "SRIMADBHAGAWADGITA LAB", editUrl: "https://github.com/ShivaPrasadAcharya/srimadbhagawadgitalab.git.io/blob/main/index.html", description: "lab for Experimenting Gita Verses" },
+                    { url: "https://shivaprasadacharya.github.io/links.git.io/", title: "SWITCH TO MASTER LINK", editUrl: "https://github.com/ShivaPrasadAcharya/links.git.io/blob/main/index.html", description: "Go to Parent Page" },
+                    { url: "https://shivaprasadacharya.github.io/dataarray-replace.git.io/", title: "REPLACE DATA ARRAY", editUrl: "https://github.com/ShivaPrasadAcharya/dataarray-replace.git.io/blob/main/index.html", description: "Generating and Replace Data Array. Replace will not expand data array" },
+                    { url: "https://shivaprasadacharya.github.io/dataarray-insert.git.io/", title: "INSERT DATA ARRAY", editUrl: "https://github.com/ShivaPrasadAcharya/dataarray-insert.git.io/blob/main/index.html", description: "Generating and Inserting Data array. Insert will expand data array." },
+                    { url: "https://shivaprasadacharya.github.io/judicialpronouncement.git.io/", title: "JUDICIAL PRONOUNCEMENT", editUrl: "https://github.com/ShivaPrasadAcharya/judicialpronouncement.git.io/blob/main/index.html", description: "Judicial Pronouncement of (especially of) SC of Nepal" },
+                    { url: "https://shivaprasadacharya.github.io/calljudiciary.git.io/", title: "CALL JUDICIARY", editUrl: "https://github.com/ShivaPrasadAcharya/calljudiciary.git.io/blob/main/index.html", description: "Contact List of Gazetted officer of Judiciary (2081)" },
+                    { url: "https://shivaprasadacharya.github.io/nasc.git.io/", title: "STAFF COLLEGE", editUrl: "https://github.com/ShivaPrasadAcharya/nasc.git.io/blob/main/index.html", description: "Contact List of OPMD participants-Upaschib (2081)" },
+                    { url: "https://shivaprasadacharya.github.io/sankalpa.git.io/", title: "SANKALPA", editUrl: "https://github.com/ShivaPrasadAcharya/sankalpa.git.io/blob/main/index.html", description: "Sankalpa for outstanding performance in DJ exam" },
+                    { url: "https://shivaprasadacharya.github.io/proffessionalwords.git.io/", title: "PROF-WORDS", editUrl: "https://github.com/ShivaPrasadAcharya/proffessionalwords.git.io/blob/main/index.html", description: "administrative proffessional words" },
+                    { url: "https://shivaprasadacharya.github.io/invitationtoanjansir.git.io/", title: "INVITATION TO ANJAN SIR", editUrl: "https://github.com/ShivaPrasadAcharya/invitationtoanjansir.git.io/blob/main/index.html", description: "Invitation to a special event" },
+                    { url: "https://shivaprasadacharya.github.io/cbcaserecord.git.io/", title: "CB CASE RECORDS", editUrl: "https://github.com/ShivaPrasadAcharya/cbcaserecord.git.io/blob/main/index.html", description: "This link shows the case records of constitutional bench. (cb)" },
+                    { url: "https://shivaprasadacharya.github.io/nyayikawajarticle.git.io/", title: "NYAYIK AWAJ ARTICLE", editUrl: "https://github.com/ShivaPrasadAcharya/nyayikawajarticle.git.io/blob/main/index.html", description: "These are the materials collected for journal (न्यायिक आवाज, २०८१)" }
+                ]
+            },
+            {
+                category: "Dear's GitHub Links", links: [
+                    { url: "https://debakatimilsina.github.io/srinajirnikunja.git.io/", title: "SRI-NAJIRNIKUNJA FULL(30TH BAR)", editUrl: "https://github.com/debakatimilsina/srinajirnikunja.git.io/blob/main/index.html", description: "Content can be copied, printed and downloaded" },
+                    { url: "https://debakatimilsina.github.io/syllablesforbarexam.git.io/", title: "(31TH BAR SYLLABLES & MCQ)", editUrl: "https://github.com/debakatimilsina/syllablesforbarexam.git.io/blob/main/index.html", description: "31st bar exam syllables & sample mcq's" },
+                    { url: "https://debakatimilsina.github.io/srinajirnikunja.git.io/", title: "SRI-NAJIRNIKUNJA FULL(30TH BAR)", editUrl: "https://github.com/debakatimilsina/srinajirnikunja.git.io/blob/main/index.html", description: "Content can be copied, printed and downloaded" },
+                    { url: "https://debakatimilsina.github.io/syllablesforbarexam.git.io/", title: "(31TH BAR SYLLABLES & MCQ)", editUrl: "https://github.com/debakatimilsina/syllablesforbarexam.git.io/blob/main/index.html", description: "31st bar exam syllables & sample mcq's" },
+                    { url: "https://debakatimilsina.github.io/modelmcqfor32barexam.git.io/", title: "MCQ FOR 32 BAR EXAM", editUrl: "https://github.com/debakatimilsina/modelmcqfor32barexam.git.io/edit/main/index.html", description: "Advocate licence exam-32nd, Najirnikunja" },
+                    { url: "https://debakatimilsina.github.io/suvakamana.git.io/", title: "INNOVATIVE LEGAL SERVICE", editUrl: "https://github.com/debakatimilsina/suvakamana.git.io/blob/main/index.html", description: "Festive Greetings and Wishes, Dashain, Suvakamana" }
+                ]
+            },
+            {
+                category: "Other Links", links: [
+                    { url: "https://docs.google.com/document/d/1wz6K4dlLiVI5TvpkFfgn6K1OV_CC5X2fBA7t2qjkFzI/edit?usp=share_link", title: "LAWEXAM.OBJ", editUrl: "", description: "" },
+                    { url: "https://docs.google.com/document/d/1y9b9xF46g50KcybqNNxGqBxCD08E_9P_HYPlIAy67ec/edit?usp=share_link", title: "PRAGYADOC", editUrl: "", description: "Source:google drive:Collection of Najir etc." },
+                    { url: "https://drive.google.com/file/d/10h63tVKyoclUvv3Hp5SbS2l2TruUTm-3/view?usp=share_link", title: "COLORPHOTO.JPG", editUrl: "", description: "Source:google drive" },
+                    { url: "https://drive.google.com/file/d/1kNzLM-frttwAHsScgtJrWZiSAkUXYTF5/view?usp=share_link", title: "BARCOUNCILSYLLABLES 31TH", editUrl: "", description: "Source: google drive:pdf file. syllables in nepali only." },
+                    { url: "https://drive.google.com/file/d/1kXqgJVf3CFxHswP7d1fzbfeUbJae2DZV/view?usp=share_link", title: "DEBAKACOLOR.JPG", editUrl: "", description: "Source: google drive" },
+                    { url: "https://drive.google.com/file/d/1NZQCIsbWOGT-iX1aJUBslUb4tv8PqwKE/view?usp=share_link", title: "LAILU", editUrl: "", description: "" },
+                    { url: "https://drive.google.com/file/d/1okZz_E0RjfRAqJ-_3mwkGXYzsJIhw8E2/view?usp=share_link", title: "PRAGYAPDF", editUrl: "", description: "" },
+                    { url: "https://drive.google.com/file/d/1PKCakwjNNF4PJUwKH6GIIHHvUXAAaH8p/view?usp=share_link", title: "B&WPHOTO.JPG", editUrl: "", description: "" }
+                ]
+            }
+        ];
+        function createLinkRow(link) {
+            return `
+                <tr>
+                    <td>
+                        <a href="${link.url}" target="_blank">${link.title}</a>
+                        ${link.editUrl ? `<a href="${link.editUrl}" target="_blank"> &#9999;</a>` : ''}
+                        ${link.description ? `<br>${link.description}` : ''}
+                    </td>
+                </tr>
+            `;
         }
-      }
-    });
-  </script>
+        function renderLinks(linksToRender) {
+            let html = '';
+            linksToRender.forEach(category => {
+                html += `
+                    <tr class="section-header">
+                        <td>${category.category}</td>
+                    </tr>
+                `;
+                html += category.links.map(createLinkRow).join('');
+            });
+            linksTable.innerHTML = html;
+        }
+        function filterLinks(query) {
+            return links.map(category => ({
+                category: category.category,
+                links: category.links.filter(link =>
+                    link.title.toLowerCase().includes(query.toLowerCase()) ||
+                    link.description.toLowerCase().includes(query.toLowerCase())
+                )
+            })).filter(category => category.links.length > 0);
+        }
+        const linksTable = document.getElementById("links-table").getElementsByTagName('tbody')[0];
+        const searchBar = document.getElementById("search-bar");
+        searchBar.addEventListener("input", function () {
+            const query = this.value.trim();
+            const filteredLinks = filterLinks(query);
+            renderLinks(filteredLinks);
+        });
+        // Initial render
+        renderLinks(links);
+    </script>
 </body>
 </html>
