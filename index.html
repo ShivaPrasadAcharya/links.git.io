@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>git-Links</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
-        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
         body {
@@ -22,9 +20,26 @@
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+        .search-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
         #search-bar {
             background-color: #fff;
             border: 1px solid #ced4da;
+            padding-right: 40px;
+        }
+        #voice-search-btn {
+            position: absolute;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        #voice-search-btn.listening {
+            color: #dc3545;
         }
         #links-table td {
             padding: 10px;
@@ -40,15 +55,16 @@
 <body>
     <div class="search-bar-container">
         <div class="container">
-            <input type="text"
-                id="search-bar"
-                class="form-control"
-                placeholder="Search links...">
+            <div class="search-wrapper">
+                <input type="text" id="search-bar" class="form-control" placeholder="Search links...">
+                <button id="voice-search-btn" title="Search by voice">
+                    🎤
+                </button>
+            </div>
         </div>
     </div>
     <div class="container mt-3">
-        <table id="links-table"
-            class="table">
+        <table id="links-table" class="table">
             <tbody>
                 <!-- Links will be dynamically added here -->
             </tbody>
@@ -182,6 +198,7 @@
                 ]
             }
         ];
+
         function createLinkRow(link) {
             return `
                 <tr>
@@ -193,6 +210,7 @@
                 </tr>
             `;
         }
+
         function renderLinks(linksToRender) {
             let html = '';
             linksToRender.forEach(category => {
@@ -205,22 +223,75 @@
             });
             linksTable.innerHTML = html;
         }
+
+        function normalizeText(text) {
+            // Remove dots and convert to lowercase for comparison
+            return text.replace(/\./g, '').toLowerCase();
+        }
+
         function filterLinks(query) {
+            const normalizedQuery = normalizeText(query);
             return links.map(category => ({
                 category: category.category,
                 links: category.links.filter(link =>
-                    link.title.toLowerCase().includes(query.toLowerCase()) ||
-                    link.description.toLowerCase().includes(query.toLowerCase())
+                    normalizeText(link.title).includes(normalizedQuery) ||
+                    normalizeText(link.description).includes(normalizedQuery)
                 )
             })).filter(category => category.links.length > 0);
         }
-        const linksTable = document.getElementById("links-table").getElementsByTagName('tbody')[0];
-        const searchBar = document.getElementById("search-bar");
-        searchBar.addEventListener("input", function () {
+
+        // Voice search functionality
+        const voiceSearchBtn = document.getElementById('voice-search-btn');
+        const searchBar = document.getElementById('search-bar');
+        const linksTable = document.getElementById('links-table').getElementsByTagName('tbody')[0];
+
+        let recognition = null;
+        try {
+            recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                searchBar.value = transcript;
+                searchBar.dispatchEvent(new Event('input'));
+                voiceSearchBtn.classList.remove('listening');
+            };
+
+            recognition.onerror = (event) => {
+                console.error('Speech recognition error:', event.error);
+                voiceSearchBtn.classList.remove('listening');
+            };
+
+            recognition.onend = () => {
+                voiceSearchBtn.classList.remove('listening');
+            };
+
+            voiceSearchBtn.addEventListener('click', () => {
+                try {
+                    if (voiceSearchBtn.classList.contains('listening')) {
+                        recognition.stop();
+                        voiceSearchBtn.classList.remove('listening');
+                    } else {
+                        recognition.start();
+                        voiceSearchBtn.classList.add('listening');
+                    }
+                } catch (error) {
+                    console.error('Speech recognition error:', error);
+                    alert('Speech recognition is not supported in your browser.');
+                }
+            });
+        } catch (error) {
+            console.error('Speech recognition is not supported:', error);
+            voiceSearchBtn.style.display = 'none';
+        }
+
+        searchBar.addEventListener('input', function() {
             const query = this.value.trim();
             const filteredLinks = filterLinks(query);
             renderLinks(filteredLinks);
         });
+
         // Initial render
         renderLinks(links);
     </script>
