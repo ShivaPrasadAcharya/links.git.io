@@ -50,6 +50,11 @@
             font-weight: bold;
             text-transform: uppercase;
         }
+        .sub-header td {
+            padding-left: 20px;
+            background-color: #f1f3f5;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -60,23 +65,72 @@
                 <button id="voice-search-btn" title="Search by voice">
                     🎤
                 </button>
+                <div class="form-check ms-2">
+                    <input class="form-check-input" type="checkbox" value="" id="nepali-normalizer-checkbox">
+                    <label class="form-check-label" for="nepali-normalizer-checkbox">
+                        Nepali normalizer
+                    </label>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container mt-3">
-        <table id="links-table" class="table">
-            <tbody>
-                <!-- Links will be dynamically added here -->
-            </tbody>
-        </table>
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-3" id="sidebar">
+                <!-- navigation panel will be injected here -->
+            </div>
+            <div class="col-9">
+                <table id="links-table" class="table">
+                    <tbody>
+                        <!-- Links will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Nepali Normalizer for enhanced search
+        // ========================================
+        const NepaliNormalizer = {
+            vowelMap: { 'ी': 'ि', 'ू': 'ु' },
+            sibilantMap: { 'श': 'स', 'ष': 'स' },
+            nasalMap: { 'ङ': 'न', 'ण': 'न', 'ञ': 'न', 'ं': 'न्' },
+            vaBaMap: { 'व': 'ब' },
+            normalize(text) {
+                if (!text) return '';
+                let n = text.normalize('NFC').replace(/\u200D/g, '').replace(/\u200C/g, '');
+                for (const [f, t] of Object.entries(this.vowelMap)) n = n.split(f).join(t);
+                for (const [f, t] of Object.entries(this.sibilantMap)) n = n.split(f).join(t);
+                for (const [f, t] of Object.entries(this.nasalMap)) n = n.split(f).join(t);
+                for (const [f, t] of Object.entries(this.vaBaMap)) n = n.split(f).join(t);
+                return n;
+            },
+            isDevanagari(text) { return /[\u0900-\u097F]/.test(text); },
+            mapToOriginal(normPos, original, normalized) {
+                if (normPos <= 0) return 0;
+                if (normPos >= normalized.length) return original.length;
+                let origIdx = 0, normIdx = 0;
+                while (normIdx < normPos && origIdx < original.length) {
+                    if (original[origIdx] === '\u200D' || original[origIdx] === '\u200C') { origIdx++; continue; }
+                    origIdx++; normIdx++;
+                }
+                while (origIdx < original.length && (original[origIdx] === '\u200D' || original[origIdx] === '\u200C')) origIdx++;
+                return origIdx;
+            }
+        };
+
+        // top-level links (always show and no category)
+        const topLinks = [
+            { url: "https://github.com/ShivaPrasadAcharya/links.git.io/blob/main/index.html", title: "EDITABLE LINK", editUrl: "https://github.com/ShivaPrasadAcharya/links.git.io/blob/main/index.html", description: "Edit your link from here" },
+            { url: "https://github.com/ShivaPrasadAcharya?tab=repositories", title: "REPOS", editUrl: "https://github.com/ShivaPrasadAcharya?tab=repositories", description: "Shiva's Repos" }
+        ];
+
         const links = [
             {
-                category: "Shiva's GitHub Links", links: [
-                    { url: "https://github.com/ShivaPrasadAcharya/links.git.io/blob/main/index.html", title: "EDITABLE LINK", editUrl: "https://github.com/ShivaPrasadAcharya/links.git.io/blob/main/index.html", description: "Edit your link from here" },
-                    { url: "https://github.com/ShivaPrasadAcharya?tab=repositories", title: "REPOS", editUrl: "https://github.com/ShivaPrasadAcharya?tab=repositories", description: "Shiva's Repos" },
+                category: "Shiva's GitHub Links",
+                // original list minus the two top links
+                links: [
                     { url: "https://ShivaPrasadAcharya.github.io/trialwebpage.git.io", title: "Trial React Webpage-with .git.io & both capitalized ", editUrl: "https://github.com/ShivaPrasadAcharya/trialwebpage.git.io", description: "Trial Webpage from React-with .git.io & both capitalized repo username" },
                     { url: "https://ShivaPrasadAcharya.github.io/trialwebpage.git.io", title: "Trial React Webpage-with .git.io & first capitalized and second smallized ", editUrl: "https://github.com/shivaprasadacharya/trialwebpage.git.io", description: "Trial Webpage from React-with .git.io & one capitalized-webaddress, file address -smallized" },
                     { url: "https://shivaprasadacharya.github.io/trialwebpage.git.io", title: "Trial React Webpage-with .git.io & first capitalized and second smallized ", editUrl: "https://github.com/ShivaPrasadAcharya/trialwebpage.git.io", description: "Trial Webpage from React-with .git.io & smallized-webaddress, file address -capitalized-username" },
@@ -277,6 +331,46 @@
             }
         ];
 
+        // after the raw links constant is defined we compute categories with subcategories
+        (function organizeSubcategories() {
+            // define subcategory predicates for Shiva's links
+            const predicates = [
+                {name: 'Timeline', re: /timeline/i},
+                {name: 'Interactive Table', re: /interactive|json table/i},
+                {name: 'Congratulation and Best Wishes', re: /congratulation|happy|birthday|married/i},
+                {name: 'Sympathy', re: /sympathy/i},
+                {name: 'lok sewa', re: /lok sewa|psc|notes|preparation/i},
+                {name: 'astrology', re: /astrology|kundali|chart/i},
+                {name: 'inbasket', re: /inbasket/i},
+                {name: 'bpsg', re: /bpsg/i},
+                {name: 'contact', re: /contact/i},
+                {name: 'lab', re: /lab/i}
+            ];
+
+            const shivaCat = links.find(c => c.category === "Shiva's GitHub Links");
+            if (shivaCat && shivaCat.links) {
+                const original = shivaCat.links.slice();
+                // prepare subcategories container
+                shivaCat.subcategories = predicates.map(p => ({ name: p.name, links: [] }));
+                shivaCat.subcategories.push({ name: 'Miscellaneous', links: [] });
+
+                original.forEach(link => {
+                    let placed = false;
+                    for (const p of predicates) {
+                        if (p.re.test(link.title) || p.re.test(link.url)) {
+                            shivaCat.subcategories.find(s => s.name === p.name).links.push(link);
+                            placed = true;
+                            break;
+                        }
+                    }
+                    if (!placed) {
+                        shivaCat.subcategories.find(s => s.name === 'Miscellaneous').links.push(link);
+                    }
+                });
+                delete shivaCat.links;
+            }
+        })();
+
         function createLinkRow(link) {
             return `
                 <tr>
@@ -289,39 +383,121 @@
             `;
         }
 
-        function renderLinks(linksToRender) {
+        function renderLinks(result) {
             let html = '';
-            linksToRender.forEach(category => {
+            // render top links first
+            if (result.top && result.top.length) {
+                result.top.forEach(link => {
+                    html += createLinkRow(link);
+                });
+            }
+            result.categories.forEach(category => {
                 html += `
                     <tr class="section-header">
                         <td>${category.category}</td>
                     </tr>
                 `;
-                html += category.links.map(createLinkRow).join('');
+                if (category.subcategories) {
+                    category.subcategories.forEach(sub => {
+                        html += `
+                            <tr class="sub-header">
+                                <td>${sub.name}</td>
+                            </tr>
+                        `;
+                        html += sub.links.map(createLinkRow).join('');
+                    });
+                } else {
+                    html += category.links.map(createLinkRow).join('');
+                }
             });
             linksTable.innerHTML = html;
         }
 
+        function renderSidebar(result) {
+            let html = '';
+            // top links list (not collapsible)
+            if (result.top && result.top.length) {
+                html += '<div class="mb-3"><strong>Top Links</strong>';
+                result.top.forEach(link => {
+                    html += `<div class="py-1"><a href="${link.url}" target="_blank">${link.title}</a></div>`;
+                });
+                html += '</div>';
+            }
+            html += '<div class="accordion" id="categoryAccordion">';
+            result.categories.forEach((cat, idx) => {
+                const catId = 'cat' + idx;
+                html += `
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="heading${catId}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${catId}" aria-expanded="false" aria-controls="collapse${catId}">
+                      ${cat.category}
+                    </button>
+                  </h2>
+                  <div id="collapse${catId}" class="accordion-collapse collapse" aria-labelledby="heading${catId}" data-bs-parent="#categoryAccordion">
+                    <div class="accordion-body p-0">
+                `;
+                if (cat.subcategories) {
+                    cat.subcategories.forEach(sub => {
+                        html += `<div class="fw-bold px-2 py-1">${sub.name}</div>`;
+                        sub.links.forEach(link => {
+                            html += `<div class="ps-3 py-1"><a href="${link.url}" target="_blank">${link.title}</a></div>`;
+                        });
+                    });
+                } else {
+                    cat.links.forEach(link => {
+                        html += `<div class="py-1 px-2"><a href="${link.url}" target="_blank">${link.title}</a></div>`;
+                    });
+                }
+                html += '</div></div></div>';
+            });
+            html += '</div>';
+            sidebar.innerHTML = html;
+        }
+
+        let useNepaliNormalizer = false; // controlled by checkbox
+
         function normalizeText(text) {
+            if (!text) return '';
             // Remove dots and convert to lowercase for comparison
-            return text.replace(/\./g, '').toLowerCase();
+            let normalized = text.replace(/\./g, '').toLowerCase();
+            // apply nepali normalizer only if enabled
+            if (useNepaliNormalizer) {
+                normalized = NepaliNormalizer.normalize(normalized);
+            }
+            return normalized;
         }
 
         function filterLinks(query) {
             const normalizedQuery = normalizeText(query);
-            return links.map(category => ({
-                category: category.category,
-                links: category.links.filter(link =>
-                    normalizeText(link.title).includes(normalizedQuery) ||
-                    normalizeText(link.description).includes(normalizedQuery)
-                )
-            })).filter(category => category.links.length > 0);
+            const matchLink = link =>
+                normalizeText(link.title).includes(normalizedQuery) ||
+                normalizeText(link.description).includes(normalizedQuery);
+
+            // filter top links separately
+            const filteredTop = topLinks.filter(matchLink);
+
+            const filteredCategories = links.map(category => {
+                if (category.subcategories) {
+                    const subs = category.subcategories.map(sub => ({
+                        name: sub.name,
+                        links: sub.links.filter(matchLink)
+                    })).filter(sub => sub.links.length > 0);
+                    return subs.length > 0 ? { category: category.category, subcategories: subs } : null;
+                } else {
+                    const fl = category.links.filter(matchLink);
+                    return fl.length ? { category: category.category, links: fl } : null;
+                }
+            }).filter(c => c !== null);
+
+            return { top: filteredTop, categories: filteredCategories };
         }
 
         // Voice search functionality
         const voiceSearchBtn = document.getElementById('voice-search-btn');
         const searchBar = document.getElementById('search-bar');
+        const nepaliCheckbox = document.getElementById('nepali-normalizer-checkbox');
         const linksTable = document.getElementById('links-table').getElementsByTagName('tbody')[0];
+        const sidebar = document.getElementById('sidebar');
 
         let recognition = null;
         try {
@@ -366,15 +542,25 @@
 
         searchBar.addEventListener('input', function() {
             const query = this.value.trim();
-            const filteredLinks = filterLinks(query);
-            renderLinks(filteredLinks);
+            const filtered = filterLinks(query);
+            renderLinks(filtered);
+            renderSidebar(filtered);
+        });
+        nepaliCheckbox.addEventListener('change', function() {
+            useNepaliNormalizer = nepaliCheckbox.checked;
+            const query = searchBar.value.trim();
+            const filtered = filterLinks(query);
+            renderLinks(filtered);
+            renderSidebar(filtered);
         });
 
-        // Initial render
-        renderLinks(links);
+        // Initial render (treat full result set)
+        renderLinks({ top: topLinks, categories: links });
+        renderSidebar({ top: topLinks, categories: links });
     </script>
 </body>
 </html>
+
 
 
 
